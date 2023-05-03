@@ -280,6 +280,19 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
+# "talk" to the movies table using the Movie model:
+movies = Movie.where({ "studio_id" => wb["id"] })
+
+# loop through movies
+for movie in movies
+  # read each movie row's columns
+  title = movie["title"]
+  year_released = movie["year_released"]
+  rated = movie["rated"]
+  # display the data
+  puts "#{title} #{year_released} #{rated}"
+end
+
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
@@ -288,3 +301,13 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+# loop through actors, roles, and movies
+#for movie in movies
+  # read each movie row's columns
+  #movie_title = movie["title"]
+  #actor_name = actor["name"]
+  #role_name = role["name"]
+  # display the data
+  #puts "#{movie_title} #{actor_name} #{role_name}"
+#end
